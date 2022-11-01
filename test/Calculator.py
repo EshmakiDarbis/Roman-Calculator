@@ -3,7 +3,7 @@ import numpy as np
 
 R_Digits={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
 Operations=['*','/','+','-']
-
+#listebi
 def Divide(inp):
     buff=[]
     temp=[]
@@ -22,7 +22,7 @@ def Divide(inp):
             temp.clear()
 
         temp.append(i)
-
+#bolo tempshi shegrovebulis chayra
     buff.append(temp.copy())
 
     return buff
@@ -60,7 +60,7 @@ def Convert_plus(inp):
 
     temp=[]
     buff=[]
-    #tu shetanilis sigrdze ertia pirdapir iwereba
+    #tu shetanili cipri ertia pirdapir iwereba pasuxi
     
     for i in inp:
         if(len(i)<=1):
@@ -70,7 +70,7 @@ def Convert_plus(inp):
         #ganixilavs gamoklebis shemtxvevebs
         for j in i:
             temp.append(j)
-        
+        #tu tavshi aris gamoklebiani aklebs
         if(temp[0]<temp[1]):
             temp.clear()
             temp.append(i[1]-i[0])
@@ -78,21 +78,23 @@ def Convert_plus(inp):
                 for j in i[2:]:
                     temp.append(j)
 
-        #boloshi ari gamoklebiani
+        #tu boloshi aris gamoklebiani isev aklebs
         if(temp[len(temp)-2]<temp[len(temp)-1]):
             temp[len(temp)-2]=temp[len(temp)-1]-temp[len(temp)-2]
             temp.pop()
         buff.append(temp.copy())
         temp.clear()
-    #tu arasworadaa dawerili romaulad anu bevrjer ari gameorebuli
+    #tu erti cipri meordeba samze metjer error
     for i in range(0,len(buff)):
+        if(len(buff[i]<=3)):
+            continue
         a,count=np.unique(buff[i],return_counts=1)
         for k in count:
             if(k>3):
                 return 0
     
     temp.clear()
-    #dajameba
+    #dajameba tu +- pirdapir pasuxi
     for i in buff:
         if(i in Operations):
             temp.append(i)
