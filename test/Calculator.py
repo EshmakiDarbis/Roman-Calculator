@@ -86,7 +86,7 @@ def Convert_plus(inp):
         temp.clear()
     #tu erti cipri meordeba samze metjer error
     for i in range(0,len(buff)):
-        if(len(buff[i]<=3)):
+        if(len(buff[i])<=3):
             continue
         a,count=np.unique(buff[i],return_counts=1)
         for k in count:
@@ -179,7 +179,7 @@ def Convert_result(Number):
  #mtavari programa
 while(True):
 
-    print('Shemoiyvanet romauli operacia:')
+    print('Shemoiyvanet romauli operacia an daweret exit gasvlistvis:')
     inp=input()
 
     if(inp=='Exit'or inp=='exit'):
@@ -193,11 +193,11 @@ while(True):
         continue
     
     Return_value=Convert_plus(Return_value)
-    narmalni_ricxvebi=Return_value.copy()
-
+    
     if(Return_value==0):
         print('SHEMOITANET SWORI PORMATIT, DAPIQSIREBULIA BEVRI GAMEOREBA!!!\n\n')
         continue
+    narmalni_ricxvebi=Return_value.copy()
 
     Return_value=Calculate(Return_value)
 
